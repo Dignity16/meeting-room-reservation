@@ -35,19 +35,17 @@ $ docker-compose up --build
       'B202', '소회의실', 20
       'C303', '큐빅룸', 15
 
-    # 회의실 예약 등록, 수정 // 시작, 종료 시간은 yyyy-MM-dd HH:mm 형식으로 작성
-       ex)	
+    # 회의실 예약 등록, 수정 
+    // 시작, 종료 시간은 yyyy-MM-dd HH:mm 형식으로 작성합니다.
+    // 예약 수정, 삭제 시 사용하는 resvNo 값은 예약 생성 시 Response body에서 확인 가능합니다.
+       ex) 예약 등록, 수정 Request body 예시
             {
              "userId": "e101010",
              "roomCd": "A101",
-             "startTime": "2025-05-06 10:00", // yyyy-MM-dd HH:mm
-             "endTime": "2025-05-06 11:00" // yyyy-MM-dd HH:mm
+             "startTime": "2025-05-06 10:00",
+             "endTime": "2025-05-06 11:00"
             }
 
     # 회의실 예약 조회
       - 월간 조회(yyyyMM)
       - 일간 조회(yyyyMMdd)
-
-## 테스트 실행 방법
-
-$ ./gradlew test
